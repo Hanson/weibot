@@ -97,3 +97,40 @@ $post->delete($mid)
 // 我的微博（待开发）
 $post->getData()
 ```
+
+## 参与开发更多 API
+
+基于 weibot，开发微博的抓包工作会更加简单
+
+### 一、登录
+
+微博很多操作都需要登录，所以写脚本的时候先登录，让 cookie 存储起来 `$weibo->login()`
+
+### 二、抓包
+
+根据浏览器看到的请求，我们可以尝试模拟一下
+
+```php
+<?php
+// $client 已经是一个带 cookie 的“浏览器”客户端了，根据实际情况进行 get 或者 post
+$client = \Hanson\Weibot\Api\Api::getClient();
+
+$response = $client->post('http://weibo.com', [
+    'header' => [
+        // 如果有特殊 header 需求    
+    ],
+    'form_params' => [
+        // 各种请求参数
+    ]
+]);
+
+// 得到的 response 有可能是页面，也有可能是接口，自行处理
+$data = json_decode($response->getBody()->getContents(), true);
+```
+
+### 相关头绪
+
+* 微博部分页面是基于页面渲染的模式
+* 微博的渲染并不按套路出牌，而是使用了 FM.view 的内部框架
+* 抓取内容需要先在 script 里正则匹配出来相关的 HTML。 例如：`preg_match_all('/Pl_Official_MyProfileFeed__20.*html\":\"(.*)\"}/', $html, $matches);`
+* 有部分地方是异步接口的，例如下滑滚动分页
