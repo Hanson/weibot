@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Hanson\Weibo;
+namespace Hanson\Weibot;
 
 
 use Symfony\Component\DomCrawler\Crawler;

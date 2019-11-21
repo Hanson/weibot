@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Hanson\Weibo\Follow;
+namespace Hanson\Weibot\Follow;
 
 
-use Hanson\Weibo\Weibo;
+use Hanson\Weibot\Weibot;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
@@ -20,7 +20,7 @@ class FollowServiceProvider implements ServiceProviderInterface
      */
     public function register(Container $pimple)
     {
-        $pimple['follow'] = function (Weibo $pimple) {
+        $pimple['follow'] = function (Weibot $pimple) {
             return new Follow($pimple);
         };
     }

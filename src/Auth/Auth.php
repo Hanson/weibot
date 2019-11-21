@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Hanson\Weibo\Auth;
+namespace Hanson\Weibot\Auth;
 
 
-use Hanson\Weibo\Api\Api;
+use Hanson\Weibot\Api\Api;
 use phpseclib\Crypt\RSA;
 use phpseclib\Math\BigInteger;
 

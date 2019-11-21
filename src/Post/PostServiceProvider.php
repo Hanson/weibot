@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Hanson\Weibo\Post;
+namespace Hanson\Weibot\Post;
 
 
-use Hanson\Weibo\Weibo;
+use Hanson\Weibot\Weibot;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
@@ -20,7 +20,7 @@ class PostServiceProvider implements ServiceProviderInterface
      */
     public function register(Container $pimple)
     {
-        $pimple['post'] = function (Weibo $pimple) {
+        $pimple['post'] = function (Weibot $pimple) {
             return new Post();
         };
     }

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Hanson\Weibo\Search;
+namespace Hanson\Weibot\Search;
 
 
-use Hanson\Weibo\Weibo;
+use Hanson\Weibot\Weibot;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
@@ -20,7 +20,7 @@ class SearchServiceProvider implements ServiceProviderInterface
      */
     public function register(Container $pimple)
     {
-        $pimple['search'] = function (Weibo $pimple) {
+        $pimple['search'] = function (Weibot $pimple) {
             return new Search();
         };
     }

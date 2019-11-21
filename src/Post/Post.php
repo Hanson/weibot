@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Hanson\Weibo\Post;
+namespace Hanson\Weibot\Post;
 
 
-use Hanson\Weibo\Api\Api;
-use Hanson\Weibo\Page;
-use Hanson\Weibo\Weibo;
+use Hanson\Weibot\Api\Api;
+use Hanson\Weibot\Page;
+use Hanson\Weibot\Weibot;
 use Symfony\Component\DomCrawler\Crawler;
 
 class Post extends Page
@@ -55,6 +55,12 @@ class Post extends Page
         return json_decode($response->getBody()->getContents(), true);
     }
 
+    /**
+     * 删除微博
+     *
+     * @param $mid string 微博id
+     * @return false|string
+     */
     public function delete($mid)
     {
         $response = Api::getClient()->post('https://weibo.com/aj/mblog/del', [
@@ -68,7 +74,7 @@ class Post extends Page
 
     public function getHtml($params = [])
     {
-        $response = Api::getClient()->get(sprintf('https://weibo.com/p/100505%s/home?profile_ftype=1&is_all=1', Weibo::$uid));
+        $response = Api::getClient()->get(sprintf('https://weibo.com/p/100505%s/home?profile_ftype=1&is_all=1', Weibot::$uid));
 
         return $response->getBody()->getContents();
     }

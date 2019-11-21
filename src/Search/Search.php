@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Hanson\Weibo\Search;
+namespace Hanson\Weibot\Search;
 
 
-use Hanson\Weibo\Api\Api;
-use Hanson\Weibo\Page;
+use Hanson\Weibot\Api\Api;
+use Hanson\Weibot\Page;
 use Symfony\Component\DomCrawler\Crawler;
 
 class Search extends Page

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Hanson\Weibo\Api;
+namespace Hanson\Weibot\Api;
 
 
 use Pimple\Container;

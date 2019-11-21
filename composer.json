@@ -1,5 +1,5 @@
 {
-    "name": "hanson/weibo",
+    "name": "hanson/weibot",
     "type": "library",
     "description": "微博模拟登录",
     "keywords": [
@@ -25,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Hanson\\Weibo\\": "src/"
+            "Hanson\\Weibot\\": "src/"
         }
     }
 }

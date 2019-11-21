@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Hanson\Weibo;
+namespace Hanson\Weibot;
 
 
 interface PageAble

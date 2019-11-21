@@ -1,22 +1,22 @@
 <?php
 
 
-namespace Hanson\Weibo\Follow;
+namespace Hanson\Weibot\Follow;
 
 
-use Hanson\Weibo\Api\Api;
-use Hanson\Weibo\Page;
-use Hanson\Weibo\Weibo;
+use Hanson\Weibot\Api\Api;
+use Hanson\Weibot\Page;
+use Hanson\Weibot\Weibot;
 use Symfony\Component\DomCrawler\Crawler;
 
 class Follow extends Page
 {
     /**
-     * @var Weibo
+     * @var Weibot
      */
     private $weibo;
 
-    public function __construct(Weibo $weibo)
+    public function __construct(Weibot $weibo)
     {
         $this->weibo = $weibo;
     }
@@ -35,7 +35,7 @@ class Follow extends Page
 
     public function getHtml($params = [])
     {
-        $response = Api::getClient()->get(sprintf('https://weibo.com/p/100505%s/myfollow', $this->weibo->uid));
+        $response = Api::getClient()->get(sprintf('https://weibo.com/p/100505%s/myfollow', Weibot::$uid));
 
         return $response->getBody()->getContents();
     }
