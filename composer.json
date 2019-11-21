@@ -1,0 +1,31 @@
+{
+    "name": "hanson/weibo",
+    "type": "library",
+    "description": "微博模拟登录",
+    "keywords": [
+        "微博",
+        "新浪",
+        "sina",
+        "weibo"
+    ],
+    "authors": [
+        {
+            "name": "HanSon",
+            "email": "h@hanc.cc"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.4",
+        "phpseclib/phpseclib": "^2.0",
+        "pear/math_biginteger": "^1.0",
+        "nesbot/carbon": "^2.26",
+        "symfony/dom-crawler": "^4.3",
+        "hanson/foundation-sdk": "^3.0",
+        "symfony/css-selector": "^4.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hanson\\Weibo\\": "src/"
+        }
+    }
+}
