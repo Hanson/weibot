@@ -43,20 +43,13 @@ $search->getData([
 <?php
 $follow = $weibo->follow;
 
+// 获取我的关注
 $follow->getData([
 //     'page' => 1, // 页数
 ]);
-```
 
-### 我的关注 Follow
-
-```php
-<?php
-$follow = $weibo->follow;
-
-$follow->getData([
-//     'page' => 1, // 页数
-]);
+// 取消关注 
+$follow->unfollow($uid);
 ```
 
 ### 微博 Post

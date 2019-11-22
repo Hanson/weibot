@@ -77,6 +77,10 @@ class Auth
 
         $result = json_decode($response->getBody()->getContents(), true);
 
+        if ($result['retcode'] != 0) {
+            throw new \Exception($result['reason']);
+        }
+
         return $result['crossDomainUrlList'][0];
     }
 
