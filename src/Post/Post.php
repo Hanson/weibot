@@ -72,6 +72,23 @@ class Post extends Page
         return json_encode($response->getBody()->getContents());
     }
 
+    /**
+     * 发表微博
+     *
+     * @param $text string 发表的内容
+     * @return mixed
+     */
+    public function send($text)
+    {
+        $response = Api::getClient()->post('https://weibo.com/aj/mblog/add?ajwvr=6&__rnd=1583565934348', [
+            'form_params' => [
+                'text' => $text,
+            ]
+        ]);
+
+        return json_decode($response->getBody()->getContents(), true);
+    }
+
     public function getHtml($params = [])
     {
         $response = Api::getClient()->get(sprintf('https://weibo.com/p/100505%s/home?profile_ftype=1&is_all=1', Weibot::$uid));
