@@ -78,7 +78,7 @@ class Post extends Page
      * @param $text string 发表的内容
      * @return mixed
      */
-    public function store($text)
+    public function send($text)
     {
         $response = Api::getClient()->post('https://weibo.com/aj/mblog/add?ajwvr=6&__rnd=1583565934348', [
             'form_params' => [
