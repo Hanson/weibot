@@ -59,6 +59,14 @@ $follow->unfollow($uid);
 $post = $weibo->post;
 
 /**
+ * 发送微博
+ *
+ * @param string $text 发送的微博内容
+ * @return mixed
+ */
+$post->send($text);
+
+/**
  * 评论微博
  *
  * @param $mid string 微博 id
